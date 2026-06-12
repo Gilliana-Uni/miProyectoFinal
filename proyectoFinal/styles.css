@@ -1,0 +1,234 @@
+:root {
+    --blue: #002F6C;
+    --red: #C8102E;
+    --green: #006B3F;
+    --gold: #D4AF37;
+    --light-bg: #F8F9FA;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: #333;
+}
+
+/* ============ NAVBAR ============ */
+.navbar {
+    background-color: var(--blue) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+
+.navbar-brand {
+    letter-spacing: 0.5px;
+}
+
+.nav-link {
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--gold) !important;
+}
+
+/* ============ HERO ============ */
+.hero {
+    background: linear-gradient(rgba(0,47,108,0.75), rgba(0,47,108,0.75)),
+                url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Exposicion_Centroamericana_1897_01.jpeg/1280px-Exposicion_Centroamericana_1897_01.jpeg') center/cover no-repeat;
+    height: 85vh;
+    margin-top: 56px;
+    color: white;
+}
+
+/* ============ BUTTONS ============ */
+.btn-primary {
+    background-color: var(--red);
+    border-color: var(--red);
+}
+
+.btn-primary:hover {
+    background-color: #a10d24;
+    border-color: #a10d24;
+}
+
+.btn-outline-primary {
+    color: var(--blue);
+    border-color: var(--blue);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--blue);
+    color: white;
+}
+
+/* ============ CARDS ============ */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 47, 108, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 47, 108, 0.2);
+}
+
+.card-title {
+    color: var(--blue);
+}
+
+/* Card images: fixed-ratio crop, never distorted */
+.card-img-top {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ============ HEADINGS ============ */
+h1, h2, h3, h5 {
+    color: var(--blue);
+}
+
+.bg-dark {
+    background-color: var(--blue) !important;
+}
+
+.text-primary {
+    color: var(--red) !important;
+}
+
+footer {
+    background-color: var(--blue) !important;
+}
+
+/* ============ GALLERY ============ */
+.gallery-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 47, 108, 0.3);
+}
+
+.modal-img {
+    max-height: 80vh;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+
+.modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.modal-header {
+    border-bottom: 2px solid var(--gold);
+}
+
+/* ============ TIMELINE ============ */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 2.5rem;
+    border-left: 3px solid var(--green);
+}
+
+.timeline .event {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    box-shadow: 0 4px 15px rgba(0, 47, 108, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline .event:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 47, 108, 0.15);
+}
+
+.timeline .event::before {
+    content: '';
+    position: absolute;
+    left: -2.95rem;
+    top: 1.75rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--green);
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 3px var(--green);
+}
+
+.timeline .event h5 {
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* Timeline images: full image visible, no cropping, consistent frame */
+.event-image-wrapper {
+    margin-top: 1rem;
+    width: 100%;
+    max-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 47, 108, 0.08);
+}
+
+.event-image {
+    width: 100%;
+    max-height: 380px;
+    object-fit: contain;
+    display: block;
+}
+
+.event-image-caption {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 0.5rem;
+    font-style: italic;
+    text-align: center;
+}
+
+/* ============ HISTORIA PAGE IMAGE ============ */
+.img-fluid.rounded.shadow {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 10px !important;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 1.75rem;
+    }
+
+    .timeline .event::before {
+        left: -2.2rem;
+        width: 12px;
+        height: 12px;
+    }
+
+    .event-image-wrapper,
+    .event-image {
+        max-height: 260px;
+    }
+}
